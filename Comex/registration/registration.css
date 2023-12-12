@@ -1,0 +1,785 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    background: rgb(39, 70, 111);
+    background: -moz-linear-gradient(90deg, rgba(39, 70, 111, 1) 6%, rgba(9, 23, 38, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(39, 70, 111, 1) 6%, rgba(9, 23, 38, 1) 100%);
+    background: linear-gradient(90deg, rgba(39, 70, 111, 1) 6%, rgba(9, 23, 38, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#27466f", endColorstr="#091726", GradientType=1);
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* HEAD INFO --------------------------------------------------------------------- */
+
+.headInfo {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0c171b;
+    height: 40px;
+}
+
+.headInfo p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.headInfo p .tel {
+    margin-right: 15px;
+    color: beige;
+    font-size: 22px;
+}
+
+.headInfo p .phoneNumber {
+    margin-left: 15px;
+    font-family: "Poppins";
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #ff5361;
+}
+
+/* NAWIGACJA - MENU HAMBURGER ---------------------------------------------------- */
+
+.icoMenu {
+    z-index: 3;
+    position: fixed;
+    top: 45px;
+    left: 30px;
+    font-size: 50px;
+    line-height: 50px;
+    transition: .5s;
+}
+
+.icoMenu.show {
+    left: 230px;
+}
+
+.icoMenu:hover {
+    cursor: pointer;
+}
+
+.icoMenuOpen,
+.icoMenuClose {
+    display: none;
+    color: #ff5361;
+    animation: circle .5s;
+}
+
+@keyframes circle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+iconify-icon.show {
+    display: block;
+}
+
+aside {
+    z-index: 2;
+    position: fixed;
+    top: 43px;
+    left: -300px;
+    width: 300px;
+    height: 430px;
+    background-color: #0c171bd3;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+aside.show {
+    left: -10px;
+}
+
+.nav {
+    position: absolute;
+    top: 60px;
+    width: 13.3vw;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav ul a {
+    margin: 5px 40px;
+    width: 100%;
+    text-decoration: none;
+    color: beige;
+    font-size: 24px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.nav ul a:hover {
+    background-color: #dad9d9;
+    color: rgb(71, 71, 71);
+}
+
+/* SEKCJA ------------------------------------------------------------------------ */
+
+.descriptionSection {
+    width: min(100% - 15px, 1200px);
+    margin: 0 auto;
+    background-color: #00000093;
+    box-shadow: 0 0 20px 4px black;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/rejestracjaBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: contrast(150%);
+}
+
+.registrationDesc {
+    position: relative;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 45%;
+    height: 90%;
+    background-color: #0000007e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px black;
+    animation: slide 2s both;
+}
+
+@keyframes slide {
+    from {
+        left: -50%;
+    }
+
+    to {
+        left: 5%;
+    }
+}
+
+.registrationDesc h2 {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: "Poppins";
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #b4b4b4;
+    text-transform: uppercase;
+}
+
+.registrationDesc h3 {
+    margin: 10px 0 10px 0;
+    padding-left: 10px;
+    color: #ff5361;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: "Poppins";
+    font-size: 22px;
+}
+
+.registrationDesc p {
+    margin-bottom: 5px;
+    padding: 0 20px 0 10px;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* FOOTER ------------------------------------------------------------------------ */
+
+.footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #0c171b;
+}
+
+.footer div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.footer div p {
+    padding: 0 0 0 50px;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    font-family: "Poppins";
+}
+
+.footer div a {
+    margin-left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: .3s;
+}
+
+.footer div a:hover {
+    color: #ff5361;
+}
+
+/* MEDIA -------------------------------------------------------------------------- */
+
+@media (min-width: 1280px) and (max-width: 1600px) {
+    .nav {
+        width: 230px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .nav {
+        width: 220px;
+    }
+
+    .descriptionSection {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .registrationDesc {
+        padding-bottom: 10px;
+        top: 110px;
+        transform: translateY(0);
+        width: 60%;
+        height: auto;
+    }
+
+    @keyframes slide {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 5%;
+        }
+    }
+
+    .registrationDesc h2 {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+
+    .registrationDesc h3 {
+        font-size: 30px;
+    }
+
+    .registrationDesc p {
+        line-height: 30px;
+        font-size: 26px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footer div p {
+        padding: 0 0 0 20px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .headInfo p .phoneNumber {
+        font-size: 16px;
+    }
+
+    .icoMenu {
+        top: 45px;
+        left: 20px;
+        font-size: 40px;
+    }
+
+    .icoMenu.show {
+        left: 220px;
+    }
+
+    aside {
+        width: 280px;
+        bottom: 50vh;
+    }
+
+    .nav {
+        position: absolute;
+        top: 45px;
+        width: 200px;
+    }
+
+    .nav ul a {
+        margin: 5px 40px;
+        font-size: 20px;
+    }
+
+    .descriptionSection {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .registrationDesc {
+        padding-bottom: 10px;
+        top: 100px;
+        transform: translateY(0);
+        width: 90%;
+        height: auto;
+    }
+
+    @keyframes slide {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 5%;
+        }
+    }
+
+    .registrationDesc h2 {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .registrationDesc h3 {
+        font-size: 26px;
+    }
+
+    .registrationDesc p {
+        line-height: 25px;
+        font-size: 22px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footer div p {
+        padding: 0 0 0 20px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+
+    .headInfo p {
+        font-size: 16px;
+    }
+
+    .headInfo p .tel {
+        font-size: 22px;
+    }
+
+    .headInfo p .phoneNumber {
+        font-size: 16px;
+    }
+
+    .icoMenu {
+        top: 45px;
+        left: 15px;
+        font-size: 40px;
+    }
+
+    .icoMenu.show {
+        left: 200px;
+    }
+
+    aside {
+        bottom: 51vh;
+        width: 260px;
+    }
+
+    .nav {
+        top: 40px;
+        width: 190px;
+    }
+
+    .nav ul a {
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+    }
+
+    .descriptionSection {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        height: 950px;
+    }
+
+    .registrationDesc {
+        padding-bottom: 10px;
+        top: 90px;
+        transform: translateY(0);
+        width: 90%;
+        height: auto;
+    }
+
+    @keyframes slide {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 5%;
+        }
+    }
+
+    .registrationDesc h2 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .registrationDesc h3 {
+        font-size: 22px;
+    }
+
+    .registrationDesc p {
+        line-height: 22px;
+        font-size: 18px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footer div p {
+        padding: 0 0 0 20px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 639px) {
+
+
+    .headInfo p {
+        font-size: 16px;
+    }
+
+    .headInfo p .phoneNumber {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+
+    .icoMenu {
+        top: 45px;
+        left: 10px;
+        font-size: 35px;
+    }
+
+    .icoMenu.show {
+        left: 150px;
+    }
+
+    aside {
+        bottom: 62vh;
+        width: 200px;
+    }
+
+    .nav {
+        top: 40px;
+        width: 130px;
+    }
+
+    .nav ul a {
+        margin: 7px 40px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+    }
+
+    .descriptionSection {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        height: 1100px;
+    }
+
+    .registrationDesc {
+        padding-bottom: 10px;
+        top: 80px;
+        transform: translateY(0);
+        width: 90%;
+        height: auto;
+    }
+
+    @keyframes slide {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 5%;
+        }
+    }
+
+    .registrationDesc h2 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .registrationDesc h3 {
+        font-size: 22px;
+    }
+
+    .registrationDesc p {
+        line-height: 22px;
+        font-size: 18px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footer div p {
+        padding: 0 0 0 20px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 479px) {
+
+    .headInfo p {
+        font-size: 12px;
+    }
+
+    .headInfo p .phoneNumber {
+        font-size: 16px;
+    }
+
+    .icoMenu {
+        top: 45px;
+        left: 5px;
+        font-size: 30px;
+    }
+
+    .icoMenu.show {
+        left: 135px;
+    }
+
+    aside {
+        top: 43px;
+        height: 250px;
+        width: 180px;
+    }
+
+    .nav {
+        top: 40px;
+        width: 160px;
+    }
+
+    .nav ul a {
+        margin: 7px 15px;
+        height: 20px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .descriptionSection {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        height: 1200px;
+    }
+
+    .registrationDesc {
+        padding-bottom: 10px;
+        top: 80px;
+        transform: translateY(0);
+        width: 90%;
+        height: auto;
+    }
+
+    @keyframes slide {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 5%;
+        }
+    }
+
+    .registrationDesc h2 {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .registrationDesc h3 {
+        font-size: 20px;
+    }
+
+    .registrationDesc p {
+        line-height: 20px;
+        font-size: 16px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footer div p {
+        padding: 0 0 0 20px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* body {
+        height: 245vh;
+    } */
+
+    .headInfo p {
+        font-size: 12px;
+    }
+
+    .headInfo p .phoneNumber {
+        font-size: 16px;
+    }
+
+    .icoMenu {
+        top: 45px;
+        left: 5px;
+        font-size: 30px;
+    }
+
+    .icoMenu.show {
+        left: 135px;
+    }
+
+    aside {
+        top: 43px;
+        height: 250px;
+        width: 180px;
+    }
+
+    .nav {
+        top: 40px;
+        width: 160px;
+    }
+
+    .nav ul a {
+        margin: 7px 15px;
+        height: 20px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .descriptionSection {
+        width: 95%;
+    }
+
+    .image {
+        width: 100%;
+        height: 1200px;
+    }
+
+    .registrationDesc {
+        padding-bottom: 10px;
+        top: 80px;
+        transform: translateY(0);
+        width: 90%;
+        height: auto;
+    }
+
+    @keyframes slide {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 5%;
+        }
+    }
+
+    .registrationDesc h2 {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .registrationDesc h3 {
+        font-size: 20px;
+    }
+
+    .registrationDesc p {
+        line-height: 20px;
+        font-size: 16px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footer div p {
+        padding: 0 0 0 20px;
+        font-size: 20px;
+    }
+}
